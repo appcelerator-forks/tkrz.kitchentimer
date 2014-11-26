@@ -8,9 +8,11 @@
 }
 "#timer" :{
 	layout: 'horizontal',
-	width: Titanium.UI.SIZE
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
 }
 "#minutesDisplay" :{
+	bottom: 0,
 	font:{
 		fontSize: 100
 	}
@@ -21,17 +23,17 @@
 		fontSize: 30
 	}
 }
-"#timerRing" :{
-	height: 200,
-	width: 200,
-	backgroundColor: 'white',
-	borderRadius: 200,
-	borderColor: 'gray',
-	borderWidth: 2
-}
-"#pointer" :{
-	top: 0,
-	width: 2,
-	height: 10,
-	backgroundColor: 'gray'
-}
+// "#timerRing" :{
+	// height: 200,
+	// width: 200,
+	// backgroundColor: 'white',
+	// borderRadius: 200,
+	// borderColor: 'gray',
+	// borderWidth: 2
+// }
+// "#pointer" :{
+	// top: 0,
+	// width: 2,
+	// height: 10,
+	// backgroundColor: 'gray'
+// }
