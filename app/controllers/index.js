@@ -44,10 +44,15 @@ function resetTimer(){
 
 function clockTick(){
 	_TIME_LEFT = _END_TIME - (new Date().getTime());
+	if(_TIME_LEFT <= 0){
+		$.minutesDisplay.text = $.secondsDisplay.text = '00';
+		stopTimer();
+		return;
+	};
 	var minutes = new Date(_TIME_LEFT).getMinutes();
 	var seconds = new Date(_TIME_LEFT).getSeconds();
 	$.minutesDisplay.text = (minutes < 10 ) ? '0'+minutes : minutes;
-	$.secondsDisplay.text = (seconds < 10 ) ? '0'+minutes : minutes;
+	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
 }
 
 $.index.open();
