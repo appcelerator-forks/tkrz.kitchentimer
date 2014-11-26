@@ -1,0 +1,15 @@
+<Alloy>
+	<Window class="container">
+		<View id="timerContainer">
+			<!-- <View id="timerRing" >
+				<View id="pointer" />
+			</View> -->
+			<View id="timer" >
+				<Label id="minutesDisplay" text="00" />
+				<Label id="secondsDisplay" text=":00" />
+			</View>
+		</View>
+		<Button id="startBtn" onClick="toggleTimer" titleid="Start">Start</Button>
+		<Button id="resetBtn" onClick="resetTimer" titleid="Reset" />
+	</Window>
+</Alloy>
