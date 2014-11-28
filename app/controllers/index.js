@@ -18,7 +18,7 @@ function toggleTimer(){
 
 function startTimer(){
 	_TIMER_RUNNING = true;
-	var duration = Ti.App.Properties.getInt('duration', 1000*60*10);
+	var duration = Ti.App.Properties.getInt('duration', 1000*60);
 	_START_TIME = new Date().getTime();
 	_END_TIME = _START_TIME + duration;
 	_TIMER = setInterval(clockTick, 1000);
@@ -45,7 +45,7 @@ function resetTimer(){
 function clockTick(){
 	_TIME_LEFT = _END_TIME - (new Date().getTime());
 	if(_TIME_LEFT <= 0){
-		$.minutesDisplay.text = $.secondsDisplay.text = '00';
+		// $.minutesDisplay.text = $.secondsDisplay.text = '00';
 		stopTimer();
 		return;
 	};
@@ -53,6 +53,12 @@ function clockTick(){
 	var seconds = new Date(_TIME_LEFT).getSeconds();
 	$.minutesDisplay.text = (minutes < 10 ) ? '0'+minutes : minutes;
 	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
+}
+
+function setTime(){
+	if(_TIMER_RUNNING)
+		return;
+	
 }
 
 $.index.open();
