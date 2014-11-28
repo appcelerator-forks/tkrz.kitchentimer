@@ -4,16 +4,17 @@
 			<!-- <View id="timerRing" >
 				<View id="pointer" />
 			</View> -->
-			<View id="timer" onClick="setTime" >
+			<View id="timer" onClick="setTimer" >
 				<Label id="minutesDisplay" text="00" />
 				<Label id="secondsDisplay" text=":00" />
 			</View>
 		</View>
 		<Button id="startBtn" onClick="toggleTimer" titleid="Start">Start</Button>
 		<Button id="resetBtn" onClick="resetTimer" titleid="Reset" >Reset</Button>
-		<AlertDialog>
-			<View>
-				<TextField id="timeInput"></TextField>
+		<AlertDialog id="setTimer" title="Set time" onClick="setTime">
+			<View layout="vertical">
+				<Label top="10" width="90%">Specify timer countdown time in minutes.</Label>
+				<TextField id="timeInput" top="10"></TextField>
 			</View>
 			<ButtonNames>
 				<ButtonName>Cancel</ButtonName>

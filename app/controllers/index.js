@@ -46,6 +46,7 @@ function clockTick(){
 	_TIME_LEFT = _END_TIME - (new Date().getTime());
 	if(_TIME_LEFT <= 0){
 		// $.minutesDisplay.text = $.secondsDisplay.text = '00';
+		Ti.Media.createSound({url: 'sounds/beep.mp3'}).play();
 		stopTimer();
 		return;
 	};
@@ -55,10 +56,18 @@ function clockTick(){
 	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
 }
 
-function setTime(){
+function setTimer(){
 	if(_TIMER_RUNNING)
 		return;
-	
+	$.setTimer.show();
+}
+
+function setTime(e){
+	if(e.index == 1){
+		Ti.App.Properties.setInt('duration', $.timeInput.value * 60 * 1000);
+		$.minutesDisplay.text = ($.timeInput.value < 10) ? '0'+$.timeInput.value : $.timeInput.value;
+		$.secondsDisplay.text = ':00';
+	}
 }
 
 $.index.open();
