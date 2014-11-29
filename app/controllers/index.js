@@ -7,7 +7,12 @@ _ANIMATION = Ti.UI.createAnimation({
 	transform: _MATRIX360
 }),
 _TIMER_RUNNING = false,
-_TIMER;
+_TIMER,
+_VIBRATE = true;
+
+function init(){
+	resetTimer();
+}
 
 function toggleTimer(){
 	if(!_TIMER_RUNNING)
@@ -22,38 +27,30 @@ function startTimer(){
 	_START_TIME = new Date().getTime();
 	_END_TIME = _START_TIME + duration;
 	_TIMER = setInterval(clockTick, 1000);
-	_ANIMATION.setDuration(duration);
 	clockTick();
-	// $.timerRing.animate(_ANIMATION);	
 	$.startBtn.title = 'Stop';
 }
 
 function stopTimer(){
 	_TIMER_RUNNING = false;
-	// $.timerRing.animate({
-		// transform: _MATRIX0,
-		// duration: 1
-	// });
 	clearInterval(_TIMER);
 	$.startBtn.title = 'Start';
 }
 
 function resetTimer(){
-	
+	_TIME_LEFT = Ti.App.Properties.getInt('duration', 1000*60);
+	updateTime();
 }
 
 function clockTick(){
 	_TIME_LEFT = _END_TIME - (new Date().getTime());
 	if(_TIME_LEFT <= 0){
-		// $.minutesDisplay.text = $.secondsDisplay.text = '00';
-		Ti.Media.createSound({url: 'sounds/beep.mp3'}).play();
+		Ti.Media.createSound({url: Ti.Filesystem.getResourcesDirectory()+'sounds/beep.mp3'}).play();
+		Ti.Media.vibrate([0, 500]);
 		stopTimer();
 		return;
 	};
-	var minutes = new Date(_TIME_LEFT).getMinutes();
-	var seconds = new Date(_TIME_LEFT).getSeconds();
-	$.minutesDisplay.text = (minutes < 10 ) ? '0'+minutes : minutes;
-	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
+	updateTime();
 }
 
 function setTimer(){
@@ -63,11 +60,29 @@ function setTimer(){
 }
 
 function setTime(e){
-	if(e.index == 1){
+	if(e.index == 1 && $.timeInput.value != '')
 		Ti.App.Properties.setInt('duration', $.timeInput.value * 60 * 1000);
-		$.minutesDisplay.text = ($.timeInput.value < 10) ? '0'+$.timeInput.value : $.timeInput.value;
-		$.secondsDisplay.text = ':00';
-	}
+	else
+		Ti.App.Properties.setInt('duration', 60 * 1000); // Default one minute
+	resetTimer();
+}
+
+function toggleScreenOn(e){
+	$.index.setKeepScreenOn(e.value);
+}
+
+function toggleVibrate(e){
+	_VIBRATE = e.value;
+}
+
+function updateTime(){
+	var time = new Date(_TIME_LEFT);
+	var hours = time.getHours() - 1;
+	var minutes = time.getMinutes();
+	var seconds = time.getSeconds();
+	$.hoursDisplay.text = (hours < 10) ? '0'+hours : hours;
+	$.minutesDisplay.text = (minutes < 10 ) ? ':0'+minutes : ':'+minutes;
+	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
 }
 
 $.index.open();

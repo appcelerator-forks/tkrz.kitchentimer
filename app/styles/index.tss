@@ -1,5 +1,5 @@
 ".container" : {
-	backgroundColor:"white",
+	backgroundColor:"black",
 	layout: 'vertical'
 }
 "#timerContainer" :{
@@ -11,17 +11,40 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.SIZE,
 }
-"#minutesDisplay" :{
+"#timeInput" :{
+	 top: 10,
+	 keyboardType: Titanium.UI.KEYBOARD_NUMBER_PAD
+}
+".majorDisplay" :{
 	bottom: 0,
 	font:{
 		fontSize: 100
 	}
 }
-"#secondsDisplay" :{
-	bottom: 0,
+".minorDisplay" :{
+	bottom: 20,
 	font: {
 		fontSize: 30
 	}
+}
+"Button" :{
+	top: 10,
+	width: '80%'
+}
+"Switch" :{
+	top: 10,
+	width: '80%',
+	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
+	color: 'gray',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+}
+"#toggleScreen" :{
+	title: "Keep screen on",
+	value: false
+}
+"#toggleVibrate" :{
+	title: "Vibrate",
+	value: true
 }
 
 
