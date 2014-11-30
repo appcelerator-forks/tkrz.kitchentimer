@@ -1,0 +1,13 @@
+{
+	"id": "timer",
+	"name": "timer",
+	"description" : "Timer widget that counts down time and notify user.",
+	"author": "Tomasz Krzywda",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2015",
+	"license":"Public Domain",
+	"min-alloy-version": "1.5.1",
+	"min-titanium-version":"3.4.1",
+	"tags":"timer,time,countdown",
+	"platforms":"android"
+}

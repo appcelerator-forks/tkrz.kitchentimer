@@ -1,0 +1,38 @@
+"#timer": {
+	height: 120,
+	width: Ti.UI.FILL
+}
+"#timerDisplay": {
+	left: 16,
+	bottom: 0,
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.SIZE
+}
+"#leftBar": {
+	left: 0,
+	height: Ti.UI.FILL,
+	width: 5,
+	color: Alloy.CFG.colors.baseColor
+}
+"#title": {
+	left: 16,
+	color: 'gray',
+	font: {
+		fontSize: 20,
+		fontWeight: 'bold'
+	},
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE
+}
+".majorDisplay": {
+	bottom: 0,
+	font:{
+		fontSize: 100
+	}
+}
+".minorDisplay": {
+	bottom: 20,
+	font: {
+		fontSize: 30
+	}
+}

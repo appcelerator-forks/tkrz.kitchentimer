@@ -1,0 +1,16 @@
+<Alloy>
+	<View id="timer">
+		<View id="leftBar"></View>
+		<Label id="title" />
+		<View id="timerDisplay">
+			<Label id="hoursDisplay" class="majorDisplay" />
+			<Label id="minutesDisplay" class="majorDisplay" />
+			<Label id="secondsDisplay" class="minorDisplay" />
+		</View>
+		<View id="controls" visible="false">
+			<Button id="start-stop" />
+			<Button id="close" />
+			<Button id="update" />
+		</View>
+	</View>
+</Alloy>
