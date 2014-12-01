@@ -13,4 +13,13 @@
 			<Button id="update" />
 		</View>
 	</View>
+	<AlertDialog id="updateTimer">
+		<View>
+			
+		</View>
+		<ButtonNames>
+			<ButtonName>Anuluj</ButtonName>
+			<ButtonName>Ustaw</ButtonName>
+		</ButtonNames>
+	</AlertDialog>
 </Alloy>
