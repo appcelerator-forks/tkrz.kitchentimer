@@ -83,3 +83,9 @@
 	width: '90%',
 	text: 'Please input timer countdown time, HH:MM:SS'
 }
+"#soundOption": {
+	title: 'Enable sound',
+}
+"#vibrateOption": {
+	title: 'Enable vibration'
+}
