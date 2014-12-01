@@ -17,6 +17,7 @@
 	<AlertDialog id="updateTimer" onClick="updateTimer" >
 	    <View layout="vertical">
 	        <TextField id="newTitle" />
+	        <Label id="timeInputMessage" />
 	        <View class="pickerView">
 	            <Picker id="hoursPicker" class="picker">
                     <PickerColumn id="hoursPickerColumn">
@@ -177,6 +178,8 @@
                     </PickerColumn>
                 </Picker>
 	        </View>
+	        <Switch id="soundOption" />
+	        <Switch id="vibrateOption" />
 	    </View>
 	</AlertDialog>
 </Alloy>

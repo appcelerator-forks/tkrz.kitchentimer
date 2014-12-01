@@ -1,3 +1,8 @@
+"Switch": {
+	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	value: true
+}
 "#timer": {
     top: 8,
     bottom: 8,
@@ -61,14 +66,20 @@
 }
 "#newTitle": {
     top: 10,
-    width: Ti.UI.FILL,
+	width: '90%',
     hintText: 'Timer title'
 }
 ".pickerView": {
     top: 10,
     height: 50,
+    width: Titanium.UI.SIZE,
     layout: 'horizontal'
 }
 ".timeSeparator": {
 	text: ':'
+}
+"#timeInputMessage": {
+	top: 10,
+	width: '90%',
+	text: 'Please input timer countdown time, HH:MM:SS'
 }
