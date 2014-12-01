@@ -1,8 +1,8 @@
 {
     "global": {
-    	colors:{
-    		baseColor: 'gray'
-    	}
+        "colors": {
+            "baseColor": "gray"
+        }
     },
     "env:development": {},
     "env:test": {},

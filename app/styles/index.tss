@@ -2,60 +2,18 @@
 	backgroundColor:"black",
 	layout: 'vertical'
 }
-"#timerContainer": {
-	top: 20,
-	height: Ti.UI.SIZE
-}
-"#timer": {
-	layout: 'horizontal',
-	width: Titanium.UI.SIZE,
-	height: Titanium.UI.SIZE,
-}
-"#timeInput": {
-	 top: 10,
-	 keyboardType: Titanium.UI.KEYBOARD_NUMBER_PAD
-}
-
-"Button": {
-	top: 10,
-	width: '80%'
-}
-"Switch": {
-	top: 10,
-	width: '80%',
-	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
-	color: 'gray',
-	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
-}
-"#toggleScreen": {
-	title: "Keep screen on",
-	value: false
-}
-"#toggleVibrate": {
-	title: "Vibrate",
-	value: true
-}
 ".roundButton": {
 	right: 16,
 	bottom: 16,
 	height: 48,
 	width: 48,
-	borderRadius: 48,
-	backgroundColor: Alloy.CFG.colors.baseColor
+	borderRadius: 24,
+	color: 'white',
+	backgroundColor: "#80ffffff"
 }
-
-
-// "#timerRing" :{
-	// height: 200,
-	// width: 200,
-	// backgroundColor: 'white',
-	// borderRadius: 200,
-	// borderColor: 'gray',
-	// borderWidth: 2
-// }
-// "#pointer" :{
-	// top: 0,
-	// width: 2,
-	// height: 10,
-	// backgroundColor: 'gray'
-// }
+"#addTimer": {
+    title: '+',
+    font: {
+        fontSize: 25
+    }
+}
