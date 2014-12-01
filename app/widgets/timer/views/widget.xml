@@ -1,16 +1,180 @@
 <Alloy>
 	<View id="timer">
-		<View id="leftBar"></View>
-		<Label id="title" />
+		<View class="leftBar" />
+		<Label id="title"/>
 		<View id="timerDisplay">
-			<Label id="hoursDisplay" class="majorDisplay" />
-			<Label id="minutesDisplay" class="majorDisplay" />
-			<Label id="secondsDisplay" class="minorDisplay" />
+			<Label id="hoursDisplay" text="00" class="majorDisplay" />
+			<Label id="minutesDisplay" text=":00" class="majorDisplay" />
+			<Label id="secondsDisplay" text=":00" class="minorDisplay" />
 		</View>
-		<View id="controls" visible="false">
-			<Button id="start-stop" />
+		<View id="timerControlls">
+			<Button id="startStop" />
 			<Button id="close" />
 			<Button id="update" />
 		</View>
+		<View class="separator" />
 	</View>
+	<AlertDialog id="updateTimer" onClick="updateTimer" >
+	    <View layout="vertical">
+	        <TextField id="newTitle" />
+	        <View class="pickerView">
+	            <Picker id="hoursPicker" class="picker">
+                    <PickerColumn id="hoursPickerColumn">
+                        <PickerRow title="00" />
+                        <PickerRow title="01" />
+                        <PickerRow title="02" />
+                        <PickerRow title="03" />
+                        <PickerRow title="04" />
+                        <PickerRow title="05" />
+                        <PickerRow title="06" />
+                        <PickerRow title="07" />
+                        <PickerRow title="08" />
+                        <PickerRow title="09" />
+                        <PickerRow title="10" />
+                        <PickerRow title="11" />
+                        <PickerRow title="12" />
+                        <PickerRow title="13" />
+                        <PickerRow title="14" />
+                        <PickerRow title="15" />
+                        <PickerRow title="16" />
+                        <PickerRow title="17" />
+                        <PickerRow title="18" />
+                        <PickerRow title="19" />
+                        <PickerRow title="20" />
+                        <PickerRow title="21" />
+                        <PickerRow title="22" />
+                        <PickerRow title="23" />
+                    </PickerColumn>
+                </Picker>
+                <Picker id="minutesPicker" class="picker">
+                    <PickerColumn id="minuresPickerColumn">
+                        <PickerRow title="00" />
+                        <PickerRow title="01" />
+                        <PickerRow title="02" />
+                        <PickerRow title="03" />
+                        <PickerRow title="04" />
+                        <PickerRow title="05" />
+                        <PickerRow title="06" />
+                        <PickerRow title="07" />
+                        <PickerRow title="08" />
+                        <PickerRow title="09" />
+                        <PickerRow title="10" />
+                        <PickerRow title="11" />
+                        <PickerRow title="12" />
+                        <PickerRow title="13" />
+                        <PickerRow title="14" />
+                        <PickerRow title="15" />
+                        <PickerRow title="16" />
+                        <PickerRow title="17" />
+                        <PickerRow title="18" />
+                        <PickerRow title="19" />
+                        <PickerRow title="20" />
+                        <PickerRow title="21" />
+                        <PickerRow title="22" />
+                        <PickerRow title="23" />
+                        <PickerRow title="24" />
+                        <PickerRow title="25" />
+                        <PickerRow title="26" />
+                        <PickerRow title="27" />
+                        <PickerRow title="28" />
+                        <PickerRow title="29" />
+                        <PickerRow title="30" />
+                        <PickerRow title="31" />
+                        <PickerRow title="32" />
+                        <PickerRow title="33" />
+                        <PickerRow title="34" />
+                        <PickerRow title="35" />
+                        <PickerRow title="36" />
+                        <PickerRow title="37" />
+                        <PickerRow title="38" />
+                        <PickerRow title="39" />
+                        <PickerRow title="40" />
+                        <PickerRow title="41" />
+                        <PickerRow title="42" />
+                        <PickerRow title="43" />
+                        <PickerRow title="44" />
+                        <PickerRow title="45" />
+                        <PickerRow title="46" />
+                        <PickerRow title="47" />
+                        <PickerRow title="48" />
+                        <PickerRow title="49" />
+                        <PickerRow title="50" />
+                        <PickerRow title="51" />
+                        <PickerRow title="52" />
+                        <PickerRow title="53" />
+                        <PickerRow title="54" />
+                        <PickerRow title="55" />
+                        <PickerRow title="56" />
+                        <PickerRow title="57" />
+                        <PickerRow title="58" />
+                        <PickerRow title="59" />
+                    </PickerColumn>
+                </Picker>
+                <Picker id="secondsPicker" class="picker">
+                    <PickerColumn id="secondsPickerColumn">
+                        <PickerRow title="00" />
+                        <PickerRow title="01" />
+                        <PickerRow title="02" />
+                        <PickerRow title="03" />
+                        <PickerRow title="04" />
+                        <PickerRow title="05" />
+                        <PickerRow title="06" />
+                        <PickerRow title="07" />
+                        <PickerRow title="08" />
+                        <PickerRow title="09" />
+                        <PickerRow title="10" />
+                        <PickerRow title="11" />
+                        <PickerRow title="12" />
+                        <PickerRow title="13" />
+                        <PickerRow title="14" />
+                        <PickerRow title="15" />
+                        <PickerRow title="16" />
+                        <PickerRow title="17" />
+                        <PickerRow title="18" />
+                        <PickerRow title="19" />
+                        <PickerRow title="20" />
+                        <PickerRow title="21" />
+                        <PickerRow title="22" />
+                        <PickerRow title="23" />
+                        <PickerRow title="24" />
+                        <PickerRow title="25" />
+                        <PickerRow title="26" />
+                        <PickerRow title="27" />
+                        <PickerRow title="28" />
+                        <PickerRow title="29" />
+                        <PickerRow title="30" />
+                        <PickerRow title="31" />
+                        <PickerRow title="32" />
+                        <PickerRow title="33" />
+                        <PickerRow title="34" />
+                        <PickerRow title="35" />
+                        <PickerRow title="36" />
+                        <PickerRow title="37" />
+                        <PickerRow title="38" />
+                        <PickerRow title="39" />
+                        <PickerRow title="40" />
+                        <PickerRow title="41" />
+                        <PickerRow title="42" />
+                        <PickerRow title="43" />
+                        <PickerRow title="44" />
+                        <PickerRow title="45" />
+                        <PickerRow title="46" />
+                        <PickerRow title="47" />
+                        <PickerRow title="48" />
+                        <PickerRow title="49" />
+                        <PickerRow title="50" />
+                        <PickerRow title="51" />
+                        <PickerRow title="52" />
+                        <PickerRow title="53" />
+                        <PickerRow title="54" />
+                        <PickerRow title="55" />
+                        <PickerRow title="56" />
+                        <PickerRow title="57" />
+                        <PickerRow title="58" />
+                        <PickerRow title="59" />
+                    </PickerColumn>
+                </Picker>
+	        </View>
+	    </View>
+	</AlertDialog>
 </Alloy>

@@ -1,31 +1,8 @@
 <Alloy>
-	<Window keepScreenOn="false" onOpen="init">
+	<Window id="index" keepScreenOn="false" onOpen="init">
 		<ScrollView id="container" class="container" >
-			<View id="timerContainer">
-				<!-- <View id="timerRing" >
-					<View id="pointer" />
-				</View> -->
-				<View id="timer" onClick="setTimer" >
-					<Label id="hoursDisplay" text="00" class="majorDisplay" />
-					<Label id="minutesDisplay" text=":00" class="majorDisplay" />
-					<Label id="secondsDisplay" text=":00" class="minorDisplay" />
-				</View>
-			</View>
-			<Button id="startBtn" onClick="toggleTimer" titleid="Start">Start</Button>
-			<Button id="resetBtn" onClick="resetTimer" titleid="Reset" >Reset</Button>
-			<Switch id="toggleScreen" onChange="toggleScreenOn" />
-			<Switch id="toggleVibrate" onChange="toggleVibrate" />
+			
 		</ScrollView>
-		<Button id="addTimer" class="roundButton" />
-		<AlertDialog id="setTimer" title="Set time" onClick="setTime">
-			<View layout="vertical">
-				<Label top="10" width="90%">Specify timer countdown time in minutes.</Label>
-				<TextField id="timeInput"></TextField>
-			</View>
-			<ButtonNames>
-				<ButtonName>Cancel</ButtonName>
-				<ButtonName>Set</ButtonName>
-			</ButtonNames>
-		</AlertDialog>
+		<Button id="addTimer" class="roundButton" onClick="addTimer" />
 	</Window>
 </Alloy>
