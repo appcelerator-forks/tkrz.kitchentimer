@@ -69,3 +69,6 @@
     height: 50,
     layout: 'horizontal'
 }
+".timeSeparator": {
+	text: ':'
+}

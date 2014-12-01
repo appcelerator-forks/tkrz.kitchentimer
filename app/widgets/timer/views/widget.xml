@@ -46,7 +46,8 @@
                         <PickerRow title="23" />
                     </PickerColumn>
                 </Picker>
-                <Picker id="minutesPicker" class="picker">
+                <Label class="timeSeparator" />
+				<Picker id="minutesPicker" class="picker">
                     <PickerColumn id="minuresPickerColumn">
                         <PickerRow title="00" />
                         <PickerRow title="01" />
@@ -110,6 +111,7 @@
                         <PickerRow title="59" />
                     </PickerColumn>
                 </Picker>
+                <Label class="timeSeparator" />
                 <Picker id="secondsPicker" class="picker">
                     <PickerColumn id="secondsPickerColumn">
                         <PickerRow title="00" />
