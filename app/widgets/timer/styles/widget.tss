@@ -104,7 +104,8 @@
     color: 'gray',
     backgroundColor: 'transparent',
     font: {
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: 'FontAwesome'
     }
 }
 "#soundOption": {
@@ -113,11 +114,19 @@
 "#vibrateOption": {
 	title: 'Enable vibration'
 }
+"#startStop": {
+    title: '\uf04b',
+    font: {
+        fontFamily: 'FontAwesome'
+    }
+}
 "#close": {
     right: 8,
-    title: 'c'
+    color: 'white',
+    title: '\uf00d'
 }
 "#update": {
     right: 24,
-    title: 'o'
+    color: 'white',
+    title: '\uf0ad'
 }
