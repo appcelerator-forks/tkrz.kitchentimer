@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="TimerTheme" parent="@style/_TimerTheme"/>
+
+  <style name="_TimerTheme" parent="Theme.AppCompat.Light">
+
+    <item name="android:editTextStyle">@style/EditTextTimerTheme</item>
+
+    <item name="android:textColorHighlight">#99ff4444</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewTimerTheme</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxTimerTheme</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonTimerTheme</item>
+
+    <item name="android:buttonStyle">@style/ButtonTimerTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonTimerTheme</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerTimerTheme</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemTimerTheme</item>
+
+    <item name="android:listViewStyle">@style/ListViewTimerTheme</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewTimerTheme.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemTimerTheme</item>
+
+  </style>
+
+</resources>

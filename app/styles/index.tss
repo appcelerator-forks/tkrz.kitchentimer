@@ -1,5 +1,5 @@
 ".container": {
-	backgroundColor:"black",
+	backgroundColor:Alloy.CFG.colors.backgroundColor,
 	layout: 'vertical'
 }
 ".roundButton": {
@@ -9,7 +9,7 @@
 	width: 48,
 	borderRadius: 24,
 	color: 'white',
-	backgroundColor: "#80ffffff"
+	backgroundColor: "#80cc0000"
 }
 "#addTimer": {
     title: '+',

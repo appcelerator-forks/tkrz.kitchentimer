@@ -5,7 +5,7 @@
     <version>1.0</version>
     <publisher>tkrz</publisher>
     <url>http://xx</url>
-    <description/>
+    <description>undefined</description>
     <copyright>2014 by tkrz</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
@@ -40,6 +40,7 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest>
+            <application android:theme="@style/Theme.Timeractionbar"/>
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
             <!-- other manifest entries -->
         </manifest>

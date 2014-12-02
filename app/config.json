@@ -1,7 +1,8 @@
 {
     "global": {
         "colors": {
-            "baseColor": "gray"
+            "baseColor": "#cc0000",
+            "backgroundColor": "white"
         }
     },
     "env:development": {},

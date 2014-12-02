@@ -1,5 +1,5 @@
 <Alloy>
-	<View id="timer">
+	<View id="timer" onSingletap="showControlls">
 		<View class="leftBar" />
 		<Label id="title"/>
 		<View id="timerDisplay">
@@ -7,20 +7,22 @@
 			<Label id="minutesDisplay" text=":00" class="majorDisplay" />
 			<Label id="secondsDisplay" text=":00" class="minorDisplay" />
 		</View>
-		<View id="timerControlls">
-			<Button id="startStop" />
-			<Button id="close" />
-			<Button id="update" />
+		<Label id="soundIco" class="ico" />
+		<Label id="vibrateIco" class="ico"  />
+		<View id="timerControlls" onSingletap="hideControlls">
+			<Button id="startStop" onSingletap="startStop" />
+			<Button id="close" onSingletap="closeTimer" class="ico" />
+			<Button id="update" onSingletap="$.showUpdateDialog" class="ico" />
 		</View>
 		<View class="separator" />
 	</View>
 	<AlertDialog id="updateTimer" onClick="updateTimer" >
-	    <View layout="vertical">
+	    <ScrollView layout="vertical">
 	        <TextField id="newTitle" />
 	        <Label id="timeInputMessage" />
 	        <View class="pickerView">
 	            <Picker id="hoursPicker" class="picker">
-                    <PickerColumn id="hoursPickerColumn">
+                    <PickerColumn>
                         <PickerRow title="00" />
                         <PickerRow title="01" />
                         <PickerRow title="02" />
@@ -49,7 +51,7 @@
                 </Picker>
                 <Label class="timeSeparator" />
 				<Picker id="minutesPicker" class="picker">
-                    <PickerColumn id="minuresPickerColumn">
+                    <PickerColumn>
                         <PickerRow title="00" />
                         <PickerRow title="01" />
                         <PickerRow title="02" />
@@ -114,7 +116,7 @@
                 </Picker>
                 <Label class="timeSeparator" />
                 <Picker id="secondsPicker" class="picker">
-                    <PickerColumn id="secondsPickerColumn">
+                    <PickerColumn>
                         <PickerRow title="00" />
                         <PickerRow title="01" />
                         <PickerRow title="02" />
@@ -180,6 +182,6 @@
 	        </View>
 	        <Switch id="soundOption" />
 	        <Switch id="vibrateOption" />
-	    </View>
+	    </ScrollView>
 	</AlertDialog>
 </Alloy>

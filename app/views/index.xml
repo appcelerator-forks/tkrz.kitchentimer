@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="index" keepScreenOn="false" onOpen="init">
+	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow">
 		<ScrollView id="container" class="container" >
 			
 		</ScrollView>

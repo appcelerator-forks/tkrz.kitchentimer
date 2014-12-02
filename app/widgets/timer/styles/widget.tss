@@ -1,4 +1,5 @@
 "Switch": {
+    width: '90%',
 	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	value: true
@@ -8,6 +9,10 @@
     bottom: 8,
 	height: 120,
 	width: Ti.UI.FILL,
+}
+"#timerControlls": {
+    visible: false,
+    backgroundColor: '#80000000'
 }
 "#timerDisplay": {
 	top: 12,
@@ -55,6 +60,8 @@
 	}
 }
 "#timerControlls": {
+    bubbleParent: false,
+    backgroundColor: '#80000000',
     visible: false
 }
 "#updateTimer": {
@@ -83,9 +90,34 @@
 	width: '90%',
 	text: 'Please input timer countdown time, HH:MM:SS'
 }
+"#soundIco": {
+    right: 8,
+    text: 's'
+}
+"#vibrateIco": {
+    right: 24,
+    text: 'v'
+}
+".ico": {
+    top: 8,
+    bubleParent: false,
+    color: 'gray',
+    backgroundColor: 'transparent',
+    font: {
+        fontSize: 20
+    }
+}
 "#soundOption": {
 	title: 'Enable sound',
 }
 "#vibrateOption": {
 	title: 'Enable vibration'
+}
+"#close": {
+    right: 8,
+    title: 'c'
+}
+"#update": {
+    right: 24,
+    title: 'o'
 }
