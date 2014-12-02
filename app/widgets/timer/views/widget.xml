@@ -184,4 +184,5 @@
 	        <Switch id="vibrateOption" />
 	    </ScrollView>
 	</AlertDialog>
+	<AlertDialog id="removeTimerDialog" />
 </Alloy>

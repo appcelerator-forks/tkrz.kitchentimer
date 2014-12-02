@@ -15,6 +15,7 @@ function closeWindow(){
         if(e.index === 1)
             $.index.close();
     });
+    dialog.show();
 }
 
 function addTimer(){
