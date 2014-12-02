@@ -92,7 +92,7 @@
 }
 "#soundIco": {
     right: 8,
-    text: 's'
+    text: '\uf0f3'
 }
 "#vibrateIco": {
     right: 24,
@@ -117,6 +117,7 @@
 "#startStop": {
     title: '\uf04b',
     font: {
+        fontSize: 30,
         fontFamily: 'FontAwesome'
     }
 }
