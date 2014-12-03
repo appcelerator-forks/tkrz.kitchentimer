@@ -96,7 +96,7 @@
 }
 "#vibrateIco": {
     right: 24,
-    text: 'v'
+    text: '\uf0e7'
 }
 ".ico": {
     top: 8,
@@ -116,6 +116,7 @@
 }
 "#startStop": {
     title: '\uf04b',
+    color: 'white',
     font: {
         fontSize: 30,
         fontFamily: 'FontAwesome'
