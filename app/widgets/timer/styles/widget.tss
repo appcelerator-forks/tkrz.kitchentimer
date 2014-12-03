@@ -100,6 +100,8 @@
 }
 ".ico": {
     top: 8,
+    height: 20,
+    width: 40,
     bubleParent: false,
     color: 'gray',
     backgroundColor: 'transparent',
@@ -128,7 +130,7 @@
     title: '\uf00d'
 }
 "#update": {
-    right: 24,
+    right: 44,
     color: 'white',
     title: '\uf0ad'
 }
