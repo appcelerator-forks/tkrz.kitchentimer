@@ -7,44 +7,87 @@ _SOUND,
 _TIMER;
 
 $.showUpdateDialog = function(isnew){
+	
+	_PARENT.updateTimer.addEventListener('click', updateTimer);
+	
     if(isnew === true){
-        $.hoursPicker.setSelectedRow(0, 0, false);
-        $.minutesPicker.setSelectedRow(0, 0, false);
-        $.secondsPicker.setSelectedRow(0, 0, false);
-        $.updateTimer.show();
+        _PARENT.hoursPicker.setSelectedRow(0, 0, false);
+        _PARENT.minutesPicker.setSelectedRow(0, 0, false);
+        _PARENT.secondsPicker.setSelectedRow(0, 0, false);
+        _PARENT.updateTimer.show();
         return;
     }
     
     var seconds = parseInt((_DURATION/1000)%60)
         , minutes = parseInt((_DURATION/(1000*60))%60)
         , hours = parseInt((_DURATION/(1000*60*60))%24);
-    $.newTitle.value = $.title.text;
-    $.hoursPicker.setSelectedRow(0, hours, false);
-    $.minutesPicker.setSelectedRow(0, minutes, false);
-    $.secondsPicker.setSelectedRow(0, seconds, false);
-    $.updateTimer.show();
+    _PARENT.newTitle.value = $.title.text;
+    _PARENT.hoursPicker.setSelectedRow(0, hours, false);
+    _PARENT.minutesPicker.setSelectedRow(0, minutes, false);
+    _PARENT.secondsPicker.setSelectedRow(0, seconds, false);
+    _PARENT.soundOption.value = _SOUND;
+    _PARENT.vibrateOption.value = _VIBRATE;
+    _PARENT.updateTimer.show();
     
+};
+
+$.createTimerFromMem = function(timer){
+	_DURATION = timer.duration;
+	updateTimerDisplay(_DURATION);
+	$.title.text = timer.name || 'Timer';
+    _VIBRATE = timer.vibrate;
+    _SOUND = timer.sound;
+    (_SOUND) ? $.soundIco.setOpacity(1) : $.soundIco.setOpacity(0.2);
+    (_VIBRATE) ? $.vibrateIco.setOpacity(1) : $.vibrateIco.setOpacity(0.2);
+    _PARENT.container.add($.timer);
 };
 
 function updateTimer(e){
     if(e.index === 1){
     	try{
-	        var hours = parseInt($.hoursPicker.getSelectedRow(0).getTitle());
-	        var minutes = parseInt($.minutesPicker.getSelectedRow(0).getTitle());
-	        var seconds = parseInt($.secondsPicker.getSelectedRow(0).getTitle());
+	        var hours = parseInt(_PARENT.hoursPicker.getSelectedRow(0).getTitle());
+	        var minutes = parseInt(_PARENT.minutesPicker.getSelectedRow(0).getTitle());
+	        var seconds = parseInt(_PARENT.secondsPicker.getSelectedRow(0).getTitle());
 	        _DURATION = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
 	        updateTimerDisplay(_DURATION);
-	        $.title.text = $.newTitle.value || 'Timer';
-	        _VIBRATE = $.vibrateOption.value;
-	        _SOUND = $.soundOption.value;
+	        $.title.text = _PARENT.newTitle.value || 'Timer';
+	        _VIBRATE = _PARENT.vibrateOption.value;
+	        _SOUND = _PARENT.soundOption.value;
 	        (_SOUND) ? $.soundIco.setOpacity(1) : $.soundIco.setOpacity(0.2);
 	        (_VIBRATE) ? $.vibrateIco.setOpacity(1) : $.vibrateIco.setOpacity(0.2);
 	        _PARENT.container.add($.timer);
+	        addToMem();
        	}
        	catch(e){
        		Ti.API.info(e);
        	}
     }
+	_PARENT.updateTimer.removeEventListener('click', updateTimer);
+}
+
+function addToMem(){
+	var timers = Ti.App.Properties.getList('timers', []);
+	if(timers.length == 0)
+		timers.push({
+			name: $.title.text,
+			duration: _DURATION,
+			vibrate: _VIBRATE,
+			sound: _SOUND
+		});
+	else
+		
+	Ti.App.Properties.setList('timers', timers);
+}
+
+function find(list){
+	var index;
+	for(var i = 0, l = timers.length; i < l; i++){
+		if(timers[i].name == $.title.text){
+			index = i;
+			break;
+		}
+	}
+	return index || -1;
 }
 
 function startStop(){
