@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="RedTimer" parent="@style/_RedTimer"/>
+
+  <style name="_RedTimer" parent="Theme.AppCompat.Light">
+
+    <item name="android:editTextStyle">@style/EditTextRedTimer</item>
+
+    <item name="android:textColorHighlight">#99cc0000</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewRedTimer</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxRedTimer</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonRedTimer</item>
+
+    <item name="android:buttonStyle">@style/ButtonRedTimer</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonRedTimer</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerRedTimer</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemRedTimer</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarRedTimer</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarRedTimer</item>
+
+  </style>
+
+</resources>
