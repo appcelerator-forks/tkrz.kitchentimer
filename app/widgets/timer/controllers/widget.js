@@ -34,7 +34,7 @@ function updateTimer(e){
 	        var seconds = parseInt($.secondsPicker.getSelectedRow(0).getTitle());
 	        _DURATION = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
 	        updateTimerDisplay(_DURATION);
-	        $.title.text = $.newTitle.value;
+	        $.title.text = $.newTitle.value || 'Timer';
 	        _VIBRATE = $.vibrateOption.value;
 	        _SOUND = $.soundOption.value;
 	        (_SOUND) ? $.soundIco.setOpacity(1) : $.soundIco.setOpacity(0.2);
