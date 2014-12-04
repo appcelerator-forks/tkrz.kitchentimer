@@ -1,8 +1,14 @@
 <Alloy>
 	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow">
+		
+		<ActionBar id="actionBar" />
+	    <Menu>
+	        <MenuItem id="addNew" title="+" onClick="addTimer" />
+	    </Menu>
+		
 		<ScrollView id="container" class="container" >
 			
 		</ScrollView>
-		<Button id="addTimer" class="roundButton" onClick="addTimer" />
+		<Button id="addTimer" class="roundButton" onClick="addTimer" visible="false" />
 	</Window>
 </Alloy>

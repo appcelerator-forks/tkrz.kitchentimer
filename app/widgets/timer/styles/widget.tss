@@ -12,7 +12,7 @@
 }
 "#timerControlls": {
     visible: false,
-    backgroundColor: '#80000000'
+    backgroundColor: '#1a000000'
 }
 "#timerDisplay": {
 	top: 12,
@@ -61,7 +61,7 @@
 }
 "#timerControlls": {
     bubbleParent: false,
-    backgroundColor: '#80000000',
+    backgroundColor: '#1a000000',
     visible: false
 }
 "#updateTimer": {

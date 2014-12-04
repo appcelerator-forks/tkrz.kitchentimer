@@ -17,3 +17,11 @@
         fontSize: 25
     }
 }
+"#actionBar": {
+    icon: '',
+    logo: ''
+}
+"#addNew": {
+    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
+    icon: Titanium.Android.R.drawable.ic_action_new
+}

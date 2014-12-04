@@ -85,6 +85,8 @@ function updateTimerDisplay(duration){
 
 function closeTimer(){
 	_PARENT.container.remove($.timer);
+	if(_IS_RUNNING)
+	   clearInterval(_TIMER);
 	$.destroy();
     return;
 }
