@@ -4,7 +4,8 @@ _END_TIME,
 _IS_RUNNING = false,
 _VIBRATE,
 _SOUND,
-_TIMER;
+_TIMER,
+_ID;
 
 $.showUpdateDialog = function(isnew){
 	
@@ -33,6 +34,7 @@ $.showUpdateDialog = function(isnew){
 
 $.createTimerFromMem = function(timer){
 	_DURATION = timer.duration;
+	_ID = timer.id;
 	updateTimerDisplay(_DURATION);
 	$.title.text = timer.name || 'Timer';
     _VIBRATE = timer.vibrate;
@@ -67,27 +69,27 @@ function updateTimer(e){
 
 function addToMem(){
 	var timers = Ti.App.Properties.getList('timers', []);
+	_ID = new Date().getTime();
 	if(timers.length == 0)
 		timers.push({
+			id: _ID,
 			name: $.title.text,
 			duration: _DURATION,
 			vibrate: _VIBRATE,
 			sound: _SOUND
 		});
-	else
-		
-	Ti.App.Properties.setList('timers', timers);
-}
-
-function find(list){
-	var index;
-	for(var i = 0, l = timers.length; i < l; i++){
-		if(timers[i].name == $.title.text){
-			index = i;
-			break;
-		}
+	else{
+		var index = find(timers);
+		if(index > -1)
+			timers[index] = {
+				id: _ID,
+				name: $.title.text,
+				duration: _DURATION,
+				vibrate: _VIBRATE,
+				sound: _SOUND
+			};
 	}
-	return index || -1;
+	Ti.App.Properties.setList('timers', timers);
 }
 
 function startStop(){
@@ -117,7 +119,7 @@ function timeTick(){
 }
 
 function updateTimerDisplay(duration){
-    Ti.API.info(duration);
+    // Ti.API.info(duration);
     var seconds = parseInt((duration/1000)%60)
         , minutes = parseInt((duration/(1000*60))%60)
         , hours = parseInt((duration/(1000*60*60))%24);
@@ -127,6 +129,11 @@ function updateTimerDisplay(duration){
 }
 
 function closeTimer(){
+	var timers = Ti.App.Properties.getList('timers', []);
+	var index = find(timers);
+	if(index > -1)
+		timers.splice(index, 1);
+	Ti.App.Properties.setList('timers', timers);
 	_PARENT.container.remove($.timer);
 	if(_IS_RUNNING)
 	   clearInterval(_TIMER);

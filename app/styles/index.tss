@@ -12,28 +12,14 @@
 	layout: 'vertical',
 	scrollType: 'vertical'
 }
-".roundButton": {
-	right: 16,
-	bottom: 16,
-	height: 48,
-	width: 48,
-	borderRadius: 24,
-	color: 'white',
-	backgroundColor: "#80cc0000"
-}
-"#addTimer": {
-    title: '+',
-    font: {
-        fontSize: 25
-    }
-}
 "#actionBar": {
     icon: '',
     logo: ''
 }
 "#addNew": {
+    title: 'Add Timer',
     showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-    icon: Titanium.Android.R.drawable.ic_action_new
+    icon: 'images/ic_action_new.png'
 }
 "#updateTimer": {
     title: 'Timer',

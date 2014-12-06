@@ -2,6 +2,7 @@
 function init(){
 	$.activityIndicator.show();
 	var timers = Ti.App.Properties.getList('timers', []);
+	Ti.API.info(JSON.stringify((timers)));
 	if(timers.length > 0)
 		_.each(timers, function(timer){
 			Alloy.createWidget('timer', {parent: $}).createTimerFromMem(timer);

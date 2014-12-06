@@ -3,12 +3,11 @@
 		
 		<ActionBar id="actionBar" />
 	    <Menu>
-	        <MenuItem id="addNew" title="+" onClick="addTimer" />
+	        <MenuItem id="addNew" onClick="addTimer" />
 	    </Menu>
 		
 		<ScrollView id="container" class="container" />
 		
-		<Button id="addTimer" class="roundButton" onClick="addTimer" visible="false" />
 		<AlertDialog id="updateTimer">
 	    <View layout="vertical">
 	        <ScrollView layout="vertical" scrollType="vertical">
