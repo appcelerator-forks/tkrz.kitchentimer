@@ -5,7 +5,7 @@
 	value: true
 }
 "ActivityIndicator": {
-	style: Titanium.UI.ActivityIndicatorStyle.BIG
+	style: Titanium.UI.ActivityIndicatorStyle.BIG_DARK
 }
 ".container": {
 	backgroundColor:Alloy.CFG.colors.backgroundColor,

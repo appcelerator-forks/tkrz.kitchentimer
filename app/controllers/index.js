@@ -1,13 +1,15 @@
 
 function init(){
+	$.container.hide();
 	$.activityIndicator.show();
-	var timers = Ti.App.Properties.getList('timers', []);
+	var timers = require('TimerManager').getTimers();
 	Ti.API.info(JSON.stringify((timers)));
 	if(timers.length > 0)
 		_.each(timers, function(timer){
 			Alloy.createWidget('timer', {parent: $}).createTimerFromMem(timer);
 		});
 	$.activityIndicator.hide();
+	$.container.show();
 }
 
 function closeWindow(){
@@ -28,6 +30,10 @@ function closeWindow(){
 
 function addTimer(){
     Alloy.createWidget('timer', {parent: $}).showUpdateDialog(true);
+}
+
+function openMenu(){
+	Alloy.createWidget('sideMenu').open();
 }
 
 $.index.open();

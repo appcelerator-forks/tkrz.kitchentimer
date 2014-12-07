@@ -68,28 +68,14 @@ function updateTimer(e){
 }
 
 function addToMem(){
-	var timers = Ti.App.Properties.getList('timers', []);
-	_ID = new Date().getTime();
-	if(timers.length == 0)
-		timers.push({
+	var timer = {
 			id: _ID,
 			name: $.title.text,
 			duration: _DURATION,
 			vibrate: _VIBRATE,
 			sound: _SOUND
-		});
-	else{
-		var index = find(timers);
-		if(index > -1)
-			timers[index] = {
-				id: _ID,
-				name: $.title.text,
-				duration: _DURATION,
-				vibrate: _VIBRATE,
-				sound: _SOUND
-			};
-	}
-	Ti.App.Properties.setList('timers', timers);
+		};
+	_ID = require('TimerManager').addTimer(timer);
 }
 
 function startStop(){
@@ -129,11 +115,7 @@ function updateTimerDisplay(duration){
 }
 
 function closeTimer(){
-	var timers = Ti.App.Properties.getList('timers', []);
-	var index = find(timers);
-	if(index > -1)
-		timers.splice(index, 1);
-	Ti.App.Properties.setList('timers', timers);
+	require('TimerManager').removeTimer(_ID);
 	_PARENT.container.remove($.timer);
 	if(_IS_RUNNING)
 	   clearInterval(_TIMER);
