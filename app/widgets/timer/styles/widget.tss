@@ -1,0 +1,100 @@
+
+"#timer": {
+    top: 8,
+    bottom: 8,
+	height: 120,
+	width: Ti.UI.FILL,
+}
+"#timerControlls": {
+    visible: false,
+    backgroundColor: '#1a000000'
+}
+"#timerDisplay": {
+	top: 12,
+	left: 16,
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.SIZE,
+	layout: 'horizontal'
+}
+".leftBar": {
+    top: 8,
+    bottom: 8,
+	left: 0,
+	height: Ti.UI.FILL,
+	width: 5,
+	backgroundColor: Alloy.CFG.colors.baseColor
+}
+".separator": {
+    bottom: 0,
+    height: 1,
+    width: Titanium.UI.FILL,
+    backgroundColor: 'gray'
+}
+"#title": {
+    top: 8,
+	left: 16,
+    height: Ti.UI.SIZE,
+    width: Ti.UI.SIZE,
+    text: 'Timer',
+	color: 'gray',
+	font: {
+		fontSize: 20,
+		fontWeight: 'bold'
+	}
+}
+".majorDisplay": {
+	bottom: 0,
+	font:{
+		fontSize: 90
+	}
+}
+".minorDisplay": {
+	bottom: 5,
+	font: {
+		fontSize: 30
+	}
+}
+"#timerControlls": {
+    bubbleParent: false,
+    backgroundColor: '#1a000000',
+    visible: false
+}
+
+"#soundIco": {
+    right: 8,
+    text: '\uf0f3'
+}
+"#vibrateIco": {
+    right: 24,
+    text: '\uf0e7'
+}
+".ico": {
+    top: 8,
+    height: 20,
+    width: 40,
+    bubleParent: false,
+    color: 'gray',
+    backgroundColor: 'transparent',
+    font: {
+        fontSize: 20,
+        fontFamily: 'FontAwesome'
+    }
+}
+"#startStop": {
+    title: '\uf04b',
+    color: 'white',
+    font: {
+        fontSize: 30,
+        fontFamily: 'FontAwesome'
+    }
+}
+"#close": {
+    right: 8,
+    color: 'white',
+    title: '\uf00d'
+}
+"#update": {
+    right: 44,
+    color: 'white',
+    title: '\uf0ad'
+}
