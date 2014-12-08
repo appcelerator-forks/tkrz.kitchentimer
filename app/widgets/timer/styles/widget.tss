@@ -56,7 +56,7 @@
 }
 "#timerControlls": {
     bubbleParent: false,
-    backgroundColor: '#1a000000',
+    backgroundColor: '#3a000000',
     visible: false
 }
 
@@ -89,12 +89,28 @@
     }
 }
 "#close": {
-    right: 8,
-    color: 'white',
+	top: 0,
     title: '\uf00d'
 }
 "#update": {
-    right: 44,
-    color: 'white',
+	top: '50%',
     title: '\uf0ad'
+}
+".controllIco": {
+    right: 0,
+    width: 50,
+    height: '50%',
+    color: 'white',
+    backgroundColor: '#1a000000',
+    backgroundSelectedColor: '#3a000000',
+    font: {
+    	fontSize: 30
+    }
+}
+"#separator": {
+	top: '50%',
+	right: 0,
+	height: 1,
+	width: 50,
+	backgroundColor: 'white'
 }

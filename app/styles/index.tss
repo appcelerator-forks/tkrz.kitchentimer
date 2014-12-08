@@ -12,20 +12,16 @@
 	layout: 'vertical',
 	scrollType: 'vertical'
 }
-"#actionBar": {
-    icon: '',
-    logo: ''
-}
 "#addNew": {
     title: 'Add Timer',
     showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-    icon: 'images/ic_action_new.png'
+    icon: '/images/ic_action_new.png'
 }
 "#updateTimer": {
     title: 'Timer',
     buttonNames: [
-        'Cancel',
-        'Set'
+        'Set',
+        'Cancel'
     ]
 }
 "#newTitle": {

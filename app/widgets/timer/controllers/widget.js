@@ -45,7 +45,7 @@ $.createTimerFromMem = function(timer){
 };
 
 function updateTimer(e){
-    if(e.index === 1){
+    if(e.index === 0){
     	try{
 	        var hours = parseInt(_PARENT.hoursPicker.getSelectedRow(0).getTitle());
 	        var minutes = parseInt(_PARENT.minutesPicker.getSelectedRow(0).getTitle());
