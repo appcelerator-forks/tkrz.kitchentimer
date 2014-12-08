@@ -1,58 +1,43 @@
-var _START_TIME,
-_END_TIME ,
-_TIME_LEFT,
-_MATRIX0 = Ti.UI.create2DMatrix().rotate(0),
-_MATRIX360 = Ti.UI.create2DMatrix().rotate(360),
-_ANIMATION = Ti.UI.createAnimation({
-	transform: _MATRIX360
-}),
-_TIMER_RUNNING = false,
-_TIMER;
 
-function toggleTimer(){
-	if(!_TIMER_RUNNING)
-		startTimer();
-	else
-		stopTimer();
+function init(){
+	$.container.hide();
+	$.activityIndicator.show();
+	var timers = require('TimerManager').getTimers();
+	// Ti.API.info(JSON.stringify((timers)));
+	if(timers.length > 0)
+		_.each(timers, function(timer){
+			Alloy.createWidget('timer', {parent: $}).createTimerFromMem(timer);
+		});
+	$.activityIndicator.hide();
+	$.container.show();
 }
 
-function startTimer(){
-	_TIMER_RUNNING = true;
-	var duration = Ti.App.Properties.getInt('duration', 1000*60*10);
-	_START_TIME = new Date().getTime();
-	_END_TIME = _START_TIME + duration;
-	_TIMER = setInterval(clockTick, 1000);
-	_ANIMATION.setDuration(duration);
-	clockTick();
-	// $.timerRing.animate(_ANIMATION);	
-	$.startBtn.title = 'Stop';
+function closeWindow(){
+    var dialog = Ti.UI.createAlertDialog({
+        title: 'Confirm close',
+        message: 'Closing application will stop all running timers.\nClose anyway?',
+        buttonNames: [
+            'Close',
+            'Cancel'
+        ]
+    });
+    dialog.addEventListener('click', function(e){
+        if(e.index === 0)
+            $.index.close();
+    });
+    dialog.show();
 }
 
-function stopTimer(){
-	_TIMER_RUNNING = false;
-	// $.timerRing.animate({
-		// transform: _MATRIX0,
-		// duration: 1
-	// });
-	clearInterval(_TIMER);
-	$.startBtn.title = 'Start';
+function addTimer(){
+    Alloy.createWidget('timer', {parent: $}).showUpdateDialog(true);
 }
 
-function resetTimer(){
-	
+function updateMenu(){
+	$.index.activity.invalidateOptionsMenu();
 }
 
-function clockTick(){
-	_TIME_LEFT = _END_TIME - (new Date().getTime());
-	if(_TIME_LEFT <= 0){
-		$.minutesDisplay.text = $.secondsDisplay.text = '00';
-		stopTimer();
-		return;
-	};
-	var minutes = new Date(_TIME_LEFT).getMinutes();
-	var seconds = new Date(_TIME_LEFT).getSeconds();
-	$.minutesDisplay.text = (minutes < 10 ) ? '0'+minutes : minutes;
-	$.secondsDisplay.text = (seconds < 10 ) ? ':0'+seconds : ':'+seconds;
-}
+// function openMenu(){
+	// Alloy.createWidget('sideMenu').open();
+// }
 
 $.index.open();

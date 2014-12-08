@@ -1,0 +1,20 @@
+<Alloy>
+	<View id="timer" onSingletap="showControlls">
+		<View class="leftBar" />
+		<Label id="title"/>
+		<View id="timerDisplay">
+			<Label id="hoursDisplay" text="00" class="majorDisplay" />
+			<Label id="minutesDisplay" text=":00" class="majorDisplay" />
+			<Label id="secondsDisplay" text=":00" class="minorDisplay" />
+		</View>
+		<Label id="soundIco" class="ico" />
+		<Label id="vibrateIco" class="ico"  />
+		<View id="timerControlls" onSingletap="hideControlls">
+			<Button id="startStop" onSingletap="startStop" />
+			<Button id="close" onSingletap="closeTimer" class="ico controllIco" />
+			<View id="separator" />
+			<Button id="update" onSingletap="$.showUpdateDialog" class="ico controllIco" />
+		</View>
+		<View class="separator" />
+	</View>
+</Alloy>
