@@ -1,12 +1,12 @@
 <Alloy>
-	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" onLongpress="openMenu" >
+	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" >
 		
 	    <Menu id="menu" platform="android">
 	        <MenuItem id="addNew" onClick="addTimer" />
 	    </Menu>
 		
 		<ScrollView id="container" class="container" />
-		
+		<View left="0" width="10px" onTouchstart="openMenu" />
 		<AlertDialog id="updateTimer">
 		    <View layout="vertical">
 		        <ScrollView layout="vertical" scrollType="vertical">
