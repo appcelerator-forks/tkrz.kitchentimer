@@ -3,6 +3,7 @@
 		
 	    <Menu id="menu" platform="android">
 	        <MenuItem id="addNew" onClick="addTimer" />
+	        <MenuItem id="savedTimers" />
 	    </Menu>
 		
 		<ScrollView id="container" class="container" />
