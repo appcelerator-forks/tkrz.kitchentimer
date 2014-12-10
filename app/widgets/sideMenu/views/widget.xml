@@ -1,7 +1,0 @@
-<Alloy>
-    <Window id="sideMenu" backgroundColor="transparent" onOpen="animate" onAndroid:back="$.close" theme="Theme.Menu">
-        <View id="bg" backgroundColor="#80000000" onTouchmove="animateMenu" onTouchend="menuSettle" >
-            <View id="menu" width="200" left="-200" backgroundColor="white" />
-        </View>
-    </Window>
-</Alloy>

@@ -6,7 +6,7 @@
 	    </Menu>
 		
 		<ScrollView id="container" class="container" />
-		<View left="0" width="10px" onTouchstart="openMenu" />
+
 		<AlertDialog id="updateTimer">
 		    <View layout="vertical">
 		        <ScrollView layout="vertical" scrollType="vertical">

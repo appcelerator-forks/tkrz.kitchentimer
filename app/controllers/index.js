@@ -39,11 +39,5 @@ function addTimer(){
     Alloy.createWidget('timer', {parent: $}).showUpdateDialog(true);
 }
 
-function openMenu(e){
-    var source = e.source;
-    Ti.API.info(e.x + ' ' + JSON.stringify(source));
-    if(e.x < 100)
-        Alloy.createWidget('sideMenu').open();
-}
 
 $.index.open();
