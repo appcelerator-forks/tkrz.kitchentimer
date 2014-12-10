@@ -1,6 +1,7 @@
 "Switch": {
     width: '90%',
 	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
+	color: 'gray',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	value: true
 }

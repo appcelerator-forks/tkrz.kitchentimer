@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="sideMenu" backgroundColor="transparent" onOpen="animate" onAndroid:back="$.close" >
-		<View id="bg" onClick="$.close" backgroundColor="#00000000" />
+	<Window id="sideMenu" backgroundColor="transparent" onOpen="animate" onAndroid:back="$.close" theme="Theme.Menu">
+		<View id="bg" onClick="$.close" backgroundColor="#80000000" />
 	</Window>
 </Alloy>

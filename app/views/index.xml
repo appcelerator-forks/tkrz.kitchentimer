@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" onPostlayout="updateMenu">
+	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" onLongpress="openMenu" >
 		
 	    <Menu id="menu" platform="android">
 	        <MenuItem id="addNew" onClick="addTimer" />

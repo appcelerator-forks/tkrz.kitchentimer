@@ -1,0 +1,12 @@
+"TextField": {
+    color: 'gray'
+}
+"Label":{
+    color: 'gray'
+}
+"Picker": {
+    color: 'gray'
+}
+"Switch": {
+    color: 'gray'
+}
