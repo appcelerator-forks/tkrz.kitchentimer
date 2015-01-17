@@ -1,0 +1,13 @@
+<resources>
+	<string name="newTimer">Add Timer</string>
+	<string name="timerTitleHint">Timer title</string>
+	<string name="newTimerInfo">Please input timer countdown time, HH:MM:SS</string>
+	<string name="soundOption">Enable sound</string>
+	<string name="vibrateOption">Enable vibration</string>
+	<string name="buttonSet">Set</string>
+	<string name="buttonCancel">Cancel</string>
+	<string name="timerDialogTitle">Timer settings</string>
+	<string name="closeDialogTitle">Confirm close</string>
+	<string name="closeMessage">Closing application will stop all running timers.\nClose anyway?</string>
+	<string name="buttonClose">Close</string>
+</resources>

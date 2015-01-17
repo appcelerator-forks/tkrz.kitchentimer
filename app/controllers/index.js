@@ -21,11 +21,11 @@ function prepareTimers(){
 
 function closeWindow(){
     var dialog = Ti.UI.createAlertDialog({
-        title: 'Confirm close',
-        message: 'Closing application will stop all running timers.\nClose anyway?',
+        title: L('closeDialogTitle','Confirm close'),
+        message: L('closeMessage','Closing application will stop all running timers.\nClose anyway?'),
         buttonNames: [
-            'Close',
-            'Cancel'
+            L('buttonClose','Close'),
+            L('buttonCancel','Cancel')
         ]
     });
     dialog.addEventListener('click', function(e){
