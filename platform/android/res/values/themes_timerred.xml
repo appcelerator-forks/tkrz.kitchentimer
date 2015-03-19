@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="TimerRed" parent="@style/_TimerRed"/>
+
+  <style name="_TimerRed" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <item name="android:editTextStyle">@style/EditTextTimerRed</item>
+
+    <item name="android:textColorHighlight">#99cc0000</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewTimerRed</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxTimerRed</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonTimerRed</item>
+
+    <item name="android:buttonStyle">@style/ButtonTimerRed</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonTimerRed</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerTimerRed</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemTimerRed</item>
+
+  </style>
+
+</resources>

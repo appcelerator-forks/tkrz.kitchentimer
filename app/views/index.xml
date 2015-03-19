@@ -1,12 +1,13 @@
 <Alloy>
-	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" onPostlayout="updateMenu">
+	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" >
 		
 	    <Menu id="menu" platform="android">
 	        <MenuItem id="addNew" onClick="addTimer" />
+	        <!-- <MenuItem id="savedTimers" /> -->
 	    </Menu>
 		
 		<ScrollView id="container" class="container" />
-		
+
 		<AlertDialog id="updateTimer">
 		    <View layout="vertical">
 		        <ScrollView layout="vertical" scrollType="vertical">

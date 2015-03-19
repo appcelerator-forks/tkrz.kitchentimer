@@ -13,7 +13,6 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "timer": "1.0",
-        "sideMenu": "1.0"
+        "timer": "1.0"
     }
 }

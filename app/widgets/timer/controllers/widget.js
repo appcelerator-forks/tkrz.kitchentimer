@@ -139,7 +139,7 @@ function hideControlls(){
 
 function notify(){
     if(_SOUND)
-        Ti.Media.createSound({url: Ti.Filesystem.getResourcesDirectory() + 'sounds/beep.mp3'}).play();
+        Ti.Media.createSound({url: Ti.Filesystem.getResourcesDirectory() + 'sounds/beep45.mp3'}).play();
     if(_VIBRATE)
-        Ti.Media.vibrate([0, 500]);
+        Ti.Media.vibrate([0, 500, 500, 500, 500, 500, 500, 500]);
 }

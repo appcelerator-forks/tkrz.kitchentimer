@@ -1,6 +1,7 @@
 "Switch": {
     width: '90%',
 	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX,
+	color: 'gray',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	value: true
 }
@@ -13,21 +14,26 @@
 	scrollType: 'vertical'
 }
 "#addNew": {
-    title: 'Add Timer',
+    title: L('newTimer','Add Timer'),
     showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
     icon: '/images/ic_action_new.png'
 }
+"#savedTimers": {
+	title: 'Saved',
+    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
+    icon: '/images/ic_action_important.png'
+}
 "#updateTimer": {
-    title: 'Timer',
+    title: L('timerDialogTitle','Timer'),
     buttonNames: [
-        'Set',
-        'Cancel'
+        L('buttonSet','Set'),
+        L('buttonCancel','Cancel')
     ]
 }
 "#newTitle": {
     top: 10,
 	width: '90%',
-    hintText: 'Timer title'
+    hintText: L('timerTitleHint','Timer title')
 }
 ".pickerView": {
     top: 10,
@@ -41,11 +47,11 @@
 "#timeInputMessage": {
 	top: 10,
 	width: '90%',
-	text: 'Please input timer countdown time, HH:MM:SS'
+	text: L('newTimerInfo','Please input timer countdown time, HH:MM:SS')
 }
 "#soundOption": {
-	title: 'Enable sound',
+	title: L('soundOption', 'Enable sound')
 }
 "#vibrateOption": {
-	title: 'Enable vibration'
+	title: L('vibrateOption','Enable vibration')
 }
