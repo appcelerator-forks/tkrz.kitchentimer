@@ -3,3 +3,5 @@
 - Changed android theme for light dark action bar parent.
 - Changed sound file, and vibrate pattern to match
 - Added stings localization
+- Added splash screen
+- Changed Ti SDK to 3.5.1.GA
