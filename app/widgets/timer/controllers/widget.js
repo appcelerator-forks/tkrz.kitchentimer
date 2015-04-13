@@ -19,8 +19,8 @@ function startStop(){
 
 function updateTimerDisplay(){
     var seconds = (_model.get('currentTime')/1000)%60
-        , minutes = (Math.floor(_model.get('currentTime'))/(1000*60))%60
-        , hours = (Math.floor(_model.get('currentTime'))/(1000*60*60))%24;
+        , minutes = Math.floor((_model.get('currentTime')/(1000*60))%60)
+        , hours = Math.floor((_model.get('currentTime')/(1000*60*60))%24);
     $.hoursDisplay.text = (hours < 10) ? '0'+hours : hours;
     $.minutesDisplay.text = (minutes < 10) ? ':0'+minutes : ':'+minutes;
     $.secondsDisplay.text = (seconds < 10) ? ':0'+seconds : ':'+seconds;
