@@ -44,6 +44,9 @@
             <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
             <!-- other manifest entries -->
         </manifest>
+        <services>
+	        <service url="timer_handler.js" type="interval"/>
+	    </services>
     </android>
     <mobileweb>
         <precache/>

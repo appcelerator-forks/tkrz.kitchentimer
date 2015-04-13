@@ -1,4 +1,5 @@
 <Alloy>
+	<Collection src="timer"></Collection>
 	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" >
 		
 	    <Menu id="menu" platform="android">
@@ -6,7 +7,9 @@
 	        <!-- <MenuItem id="savedTimers" /> -->
 	    </Menu>
 		
-		<ScrollView id="container" class="container" />
+		<ScrollView id="container"
+			class="container">
+		</ScrollView>
 
 		<AlertDialog id="updateTimer">
 		    <View layout="vertical">

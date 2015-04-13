@@ -13,7 +13,7 @@
 			<Button id="startStop" onSingletap="startStop" />
 			<Button id="close" onSingletap="closeTimer" class="ico controllIco" />
 			<View id="separator" />
-			<Button id="update" onSingletap="$.showUpdateDialog" class="ico controllIco" />
+			<Button id="update" onSingletap="showUpdateDialog" class="ico controllIco" />
 		</View>
 		<View class="separator" />
 	</View>
