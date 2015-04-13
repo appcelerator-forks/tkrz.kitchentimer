@@ -7,7 +7,5 @@
 	<string name="buttonSet">Ustaw</string>
 	<string name="buttonCancel">Anuluj</string>
 	<string name="timerDialogTitle">Ustawienia licznika</string>
-	<string name="closeDialogTitle">Zamknij</string>
-	<string name="closeMessage">Zamknięcie aplikacji spowoduje zatrzymanie i reset wszystkich działających liczników.\nZamknąć mimo to?</string>
-	<string name="buttonClose">Zamknij</string>
+	<string name="close">Zamknij</string>
 </resources>

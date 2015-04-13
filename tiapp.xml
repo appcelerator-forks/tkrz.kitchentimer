@@ -2,11 +2,11 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>pl.tidev.kitchentimer</id>
     <name>Kitchen Timer</name>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <publisher>tkrz</publisher>
     <url>http://xx</url>
     <description>undefined</description>
-    <copyright>2014 by tkrz</copyright>
+    <copyright>2015 by Ti Dev</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -39,7 +39,7 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="3" android:versionName="1.0.2">
+        <manifest android:versionCode="1" android:versionName="1.0.0">
             <application android:theme="@style/Theme.Actionbarred"/>
             <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
             <!-- other manifest entries -->

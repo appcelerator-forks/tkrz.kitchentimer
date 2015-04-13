@@ -2,7 +2,7 @@ var _parent = arguments[0].parent,
 _model = arguments[0].model;
 
 _model.on('change:currentTime', function(){
-    Ti.API.info('Model update: ' + _model.get('currentTime'));
+    // Ti.API.info('Model update: ' + _model.get('currentTime'));
     updateTimerDisplay();
 });
 

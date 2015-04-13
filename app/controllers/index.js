@@ -23,27 +23,15 @@ function prepareTimers(){
     if(_collection.length > 0)
         _collection.each(function(model)
         {
-    		$.container.add(Alloy.createWidget('timer', {parent: $, model: model}).getView());
+    		$.container.add(Alloy.createWidget('pl.tidev.kitchentimer.timer', {parent: $, model: model}).getView());
         });
     $.activityIndicator.hide();
     $.container.show();
 }
 
-function closeWindow(){
-    var dialog = Ti.UI.createAlertDialog({
-        title: L('closeDialogTitle','Confirm close'),
-        message: L('closeMessage','Closing application will stop all running timers.\nClose anyway?'),
-        buttonNames: [
-            L('buttonClose','Close'),
-            L('buttonCancel','Cancel')
-        ]
-    });
-    dialog.addEventListener('click', function(e){
-        if(e.index === 0)
-            $.index.close();
-            $.destroy();
-    });
-    dialog.show();
+function close(){
+    $.index.close();
+    $.destroy();
 }
 
 function addTimer(){
@@ -58,7 +46,7 @@ function addTimer(){
     });
     model.save();
     _collection.add(model);
-    $.container.add(Alloy.createWidget('timer', {parent: $, model: model}).getView());
+    $.container.add(Alloy.createWidget('pl.tidev.kitchentimer.timer', {parent: $, model: model}).getView());
 }
 
 

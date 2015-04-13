@@ -14,7 +14,7 @@ var alarmManager = require('bencoding.alarmmanager').createAlarmManager();
 
 alarmManager.addAlarmService({
 	requestCode: 0,
-    service: 'pl.tidev.kitchentimer.Timer_handlerService',        
+    service: 'pl.tidev.kitchentimer.TimerService',        
     interval: 1000,
     second: 0
 });
