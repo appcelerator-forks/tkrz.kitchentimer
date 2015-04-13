@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>pl.tkrz.kitchentimer</id>
+    <id>pl.tidev.kitchentimer</id>
     <name>Kitchen Timer</name>
     <version>1.0.1</version>
     <publisher>tkrz</publisher>
@@ -45,8 +45,8 @@
             <!-- other manifest entries -->
         </manifest>
         <services>
-	        <service url="timer_handler.js" type="interval"/>
-	    </services>
+            <service type="interval" url="timer_handler.js"/>
+        </services>
     </android>
     <mobileweb>
         <precache/>
@@ -56,7 +56,9 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="android">bencoding.alarmmanager</module>
+    </modules>
     <deployment-targets>
         <target device="iphone">false</target>
         <target device="ipad">false</target>

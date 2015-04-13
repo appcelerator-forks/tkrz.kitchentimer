@@ -10,7 +10,7 @@ function init(){
         Ti.API.info('Added model');
     });
     Ti.Analytics.featureEvent('App open');
-	// prepareTimers();
+	prepareTimers();
 	// $.index.activity.actionBar.onHomeIconItemSelected = openMenu();
     $.index.activity.invalidateOptionsMenu();
 }
@@ -18,12 +18,13 @@ function init(){
 function prepareTimers(){
     $.container.hide();
     $.activityIndicator.show();
-    var timers = require('TimerManager').getTimers();
+    // var timers = require('TimerManager').getTimers();
     // Ti.API.info(JSON.stringify((timers)));
-    // if(timers.length > 0)
-        // _.each(timers, function(timer){
-            // Alloy.createWidget('timer', {parent: $}).createTimerFromMem(timer);
-        // });
+    if(_collection.length > 0)
+        _collection.each(function(model)
+        {
+    		$.container.add(Alloy.createWidget('timer', {parent: $, model: model}).getView());
+        });
     $.activityIndicator.hide();
     $.container.show();
 }

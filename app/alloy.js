@@ -10,21 +10,11 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-Alloy.Globals.updateObj = _.extend({}, Backbone.Events);
+var alarmManager = require('bencoding.alarmmanager').createAlarmManager();
 
-var intent = Titanium.Android.createServiceIntent( { url: 'timer_handler.js' } );
-// Service should run its code every 1 seconds.
-intent.putExtra('interval', 1000);
-
-
-var service = Titanium.Android.currentService;
-
-if(!service)
-{
-    Ti.API.debug('service not running, creating');
-    var service = Ti.Android.createService(intent);
-    service.addEventListener('stop', function(e) {
-        service.start();
-    });
-    service.start();
-}
+alarmManager.addAlarmService({
+	requestCode: 0,
+    service: 'pl.tidev.kitchentimer.Timer_handlerService',        
+    interval: 1000,
+    second: 0
+});

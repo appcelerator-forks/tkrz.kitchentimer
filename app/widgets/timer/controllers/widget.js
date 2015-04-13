@@ -27,7 +27,7 @@ function updateTimerDisplay(){
 }
 
 function closeTimer(){
-	_PARENT.container.remove($.timer);
+	_parent.container.remove($.timer);
     _model.destroy();
 }
 
@@ -48,11 +48,4 @@ function hideControlls(){
         visible: false
     });
     return;
-}
-
-function notify(){
-    if(_SOUND)
-        Ti.Media.createSound({url: Ti.Filesystem.getResourcesDirectory() + 'sounds/beep45.mp3'}).play();
-    if(_VIBRATE)
-        Ti.Media.vibrate([0, 500, 500, 500, 500, 500, 500, 500]);
 }
