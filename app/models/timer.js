@@ -9,6 +9,14 @@ exports.definition = {
 		    "sound": "integer",
 		    "vibrate": "integer"
 		},
+		defaults: {
+		    "name": "Timer",
+		    "duration": 0,
+		    "currentTime": 0,
+		    "isRunning": false,
+		    "sound": true,
+		    "vibrate": true
+		},
 		adapter: {
 			type: "sql",
 			collection_name: "timer",

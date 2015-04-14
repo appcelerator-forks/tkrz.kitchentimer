@@ -43,18 +43,18 @@ function close(){
 }
 
 function addTimer(){
-    var model = Alloy.createModel('timer', {
-        name: "wldjwlcwcbkec",
-        id: null,
-        duration: 36000,
-        currentTime: 36000,
-        isRunning: 0,
-        sound: 0,
-        vibrate: 0
+    var dialog = Alloy.createWidget('pl.tidev.kitchentimer.optionsdialog');
+    dialog.optionsDialog.addEventListener('click', function(e){
+        if(e.button && e.index == 0 )
+        {
+            var data = dialog.getData();
+            var model = Alloy.createModel('timer', data);
+            model.save();
+            _collection.add(model);
+            $.container.add(Alloy.createWidget('pl.tidev.kitchentimer.timer', {parent: $, model: model}).getView());
+        }
     });
-    model.save();
-    _collection.add(model);
-    $.container.add(Alloy.createWidget('pl.tidev.kitchentimer.timer', {parent: $, model: model}).getView());
+    dialog.optionsDialog.show();
 }
 
 

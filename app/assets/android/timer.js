@@ -1,7 +1,8 @@
-var _collection = Alloy.Collections.instance('timer');
+var _collection = Alloy.Collections.instance('timer'),
+_service = Titanium.Android.currentService;
 _collection = _collection.where({isRunning: 1});
 
-// Ti.API.info('length: ' + _collection.length);
+Ti.API.info(_service.getServiceInstanceId());
 
 for(var i = 0, l = _collection.length; i < l; i++)
 {

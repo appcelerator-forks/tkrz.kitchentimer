@@ -10,4 +10,6 @@
 	<string name="closeDialogTitle">Confirm close</string>
 	<string name="closeMessage">Closing application will stop all running timers.\nClose anyway?</string>
 	<string name="buttonClose">Close</string>
+	<string name="notificationBody">Timer %s has ended countdown!</string>
+	<string name="notificationTitle">Timer finished</string>
 </resources>

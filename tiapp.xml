@@ -45,7 +45,7 @@
             <!-- other manifest entries -->
         </manifest>
         <services>
-            <service type="interval" url="timer_handler.js"/>
+            <service type="interval" url="timer.js"/>
         </services>
     </android>
     <mobileweb>

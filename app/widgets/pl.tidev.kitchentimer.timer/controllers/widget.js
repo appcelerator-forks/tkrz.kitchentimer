@@ -33,7 +33,16 @@ function closeTimer(){
 
 function showUpdateDialog()
 {
-    
+    var dialog = Alloy.createWidget('pl.tidev.kitchentimer.optionsdialog');
+    dialog.setData($model);
+    dialog.optionsDialog.addEventListener('click', function(e){
+        if(e.button && e.index == 0 )
+        {
+            var data = dialog.getData();
+            $.model.save(data);
+        }
+    });
+    dialog.optionsDialog.show();
 }
 
 function showControlls(){

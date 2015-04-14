@@ -8,4 +8,6 @@
 	<string name="buttonCancel">Anuluj</string>
 	<string name="timerDialogTitle">Ustawienia licznika</string>
 	<string name="close">Zamknij</string>
+	<string name="notificationBody">Licznik %s skończył odliczanie!</string>
+	<string name="notificationTitle">Zakończone odliczanie</string>
 </resources>
