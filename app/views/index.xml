@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="timer"></Collection>
-	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="closeWindow" >
+	<Window id="index" keepScreenOn="false" onOpen="init" onAndroid:back="close" >
 		
 	    <Menu id="menu" platform="android">
 	        <MenuItem id="addNew" onClick="addTimer" />
