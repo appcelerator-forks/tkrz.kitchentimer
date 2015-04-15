@@ -9,3 +9,11 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+var alarmManager = require('bencoding.alarmmanager').createAlarmManager();
+
+alarmManager.addAlarmService({
+    requestCode: 0,
+    service: 'pl.tidev.kitchentimer.Timer_handlerService',        
+    interval: 1000,
+    second: 0
+});

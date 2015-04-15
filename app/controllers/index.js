@@ -1,13 +1,6 @@
 
-var _collection = Alloy.Collections.instance('timer'),
-alarmManager = require('bencoding.alarmmanager').createAlarmManager();
+var _collection = Alloy.Collections.instance('timer');
 
-alarmManager.addAlarmService({
-	requestCode: 0,
-    service: 'pl.tidev.kitchentimer.TimerService',        
-    interval: 1000,
-    second: 0
-});
 
 function init(){
     _collection.fetch();

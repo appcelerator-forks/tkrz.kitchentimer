@@ -7,6 +7,8 @@ _model.on('change:currentTime', function(){
 });
 
 $.title.text = _model.get('name');
+(_model.get('sound') == 0) ? $.soundIco.opacity = 0.1 : $.soundIco.opacity = 1;
+(_model.get('vibrate') == 0) ? $.vibrateIco.opacity = 0.1 : $.vibrateIco.opacity = 1;
 updateTimerDisplay();
 
 function startStop(){
@@ -34,12 +36,15 @@ function closeTimer(){
 function showUpdateDialog()
 {
     var dialog = Alloy.createWidget('pl.tidev.kitchentimer.optionsdialog');
-    dialog.setData($model);
+    dialog.setData(_model);
     dialog.optionsDialog.addEventListener('click', function(e){
         if(e.button && e.index == 0 )
         {
             var data = dialog.getData();
-            $.model.save(data);
+            _model.save(data);
+            $.title.text = data.name;
+            (data.sound == 0) ? $.soundIco.opacity = 0.1 : $.soundIco.opacity = 1;
+            (data.vibrate == 0) ? $.vibrateIco.opacity = 0.1 : $.vibrateIco.opacity = 1;
         }
     });
     dialog.optionsDialog.show();
