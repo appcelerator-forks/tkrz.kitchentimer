@@ -1,7 +1,7 @@
 var _parent = arguments[0].parent,
 _model = arguments[0].model;
 
-_model.on('change:currentTime', function(){
+_model.on('change:current_time', function(){
     // Ti.API.info('Model update: ' + _model.get('currentTime'));
     updateTimerDisplay();
 });
@@ -12,17 +12,42 @@ $.title.text = _model.get('name');
 updateTimerDisplay();
 
 function startStop(){
-    if(!_model.get('isRunning')){
-        _model.save({isRunning: 1});
+    if(!_model.get('is_running')){
+        var currentTime = _model.get('current_time')
+            , now = new Date().getTime()
+            , end = new Date(now + currentTime);
+        _model.save({
+            is_running: 1,
+            last_update: new Date().getTime()
+        });
+        Ti.API.info(end.toTimeString());
+        Alloy.Globals.AlarmManager.addAlarmNotification({
+            requestCode: _model.get('id'),
+            icon: Ti.App.Android.R.drawable.appicon,
+            year: end.getFullYear(),
+            month: end.getMonth(),
+            day: end.getDate(),
+            second: end.getSeconds(),
+            minute: end.getMinutes(),
+            hour: end.getHours(), 
+            contentTitle: L('notificationTitle'),
+            contentText: String.format(L('notificationBody'), _model.get('name')),
+            vibrate: (_model.get('vibrate') == 1) ? true : false,
+            playSound: (_model.get('sound') == 1) ? true: false
+        });
     }
     else
-        _model.save({isRunning: 0});
+    {
+        _model.save({is_running: 0});
+        Alloy.Globals.AlarmManager.cancelAlarmNotification(_model.get('id'));
+    }
 }
 
 function updateTimerDisplay(){
-    var seconds = (_model.get('currentTime')/1000)%60
-        , minutes = Math.floor((_model.get('currentTime')/(1000*60))%60)
-        , hours = Math.floor((_model.get('currentTime')/(1000*60*60))%24);
+    var currentTime = _model.get('current_time')
+        , seconds = Math.floor((currentTime/1000)%60)
+        , minutes = Math.floor((currentTime/(1000*60))%60)
+        , hours = Math.floor((currentTime/(1000*60*60))%24);
     $.hoursDisplay.text = (hours < 10) ? '0'+hours : hours;
     $.minutesDisplay.text = (minutes < 10) ? ':0'+minutes : ':'+minutes;
     $.secondsDisplay.text = (seconds < 10) ? ':0'+seconds : ':'+seconds;

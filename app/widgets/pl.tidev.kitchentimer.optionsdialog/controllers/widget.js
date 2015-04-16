@@ -21,7 +21,7 @@ $.getData = function()
     var data = {
         name: $.newTitle.value,
         duration: duration,
-        currentTime: duration,
+        current_time: duration,
         sound: ($.soundOption.value) ? 1 : 0,
         vibrate: ($.vibrateOption.value) ? 1 : 0
     };

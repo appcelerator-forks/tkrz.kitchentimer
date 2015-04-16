@@ -1,37 +1,24 @@
 var _collection = Alloy.Collections.instance('timer'),
 _service = Titanium.Android.currentService;
-_collection = _collection.where({isRunning: 1});
+_collection = _collection.where({is_running: 1});
 
-Ti.API.info(_service.getServiceInstanceId());
+// Ti.API.info(_collection.length);
 
 for(var i = 0, l = _collection.length; i < l; i++)
 {
-    var model = _collection[i];
-    var time = model.get('currentTime');
-    // Ti.API.info(JSON.stringify(model));
-    var set = {
-        currentTime: time - 1000
-    };
-    if(model.get('currentTime') <= 0)
+    var model = _collection[i]
+        , time = model.get('current_time')
+        , now = new Date().getTime()
+        , delta = (now - model.get('last_update'))
+        , set = {
+            current_time: time - /*((delta < 1000) ? 1000 : */delta/*)*/,
+            last_update: now
+        };
+    Ti.API.info((now - model.get('last_update')));
+    if(set.current_time < 0)
     {
-        set.isRunning = 0,
-        set.currentTime = model.get('duration');
-        notify(model.toJSON());
+        set.is_running = 0,
+        set.current_time = model.get('duration');
     }
     model.save(set);
-}
-
-function notify(timer)
-{
-    var notification = Titanium.Android.createNotification({
-        contentTitle: L('notificationTitle'),
-        contentText : String.format(L('notificationBody'), timer.name),
-        contentIntent: Ti.Android.createPendingIntent({intent: Ti.Android.createIntent({})}),
-        when: new Date()
-    });
-    if(timer.sound)
-        notification.defaults = Titanium.Android.DEFAULT_SOUND;
-    if(timer.vibrate)
-        notification.defaults = notification.defaults | Titanium.Android.DEFAULT_VIBRATE;
-    Ti.Android.NotificationManager.notify(timer.id, notification);
 }
