@@ -1,8 +1,7 @@
 "#dialog": {
 	title: L('settings'),
 	buttonNames: [
-		'OK',
-		L('buttonCancel')
+		L('buttonSave')
 	]
 }
 ".container": {

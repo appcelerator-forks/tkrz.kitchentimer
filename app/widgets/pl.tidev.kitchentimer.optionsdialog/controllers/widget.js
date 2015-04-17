@@ -14,16 +14,40 @@ $.setData = function(model)
 
 $.getData = function()
 {
-    var hours = parseInt($.hoursPicker.getSelectedRow(0).getTitle());
-    var minutes = parseInt($.minutesPicker.getSelectedRow(0).getTitle());
-    var seconds = parseInt($.secondsPicker.getSelectedRow(0).getTitle());
-    var duration = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
-    var data = {
-        name: $.newTitle.value,
-        duration: duration,
-        current_time: duration,
-        sound: ($.soundOption.value) ? 1 : 0,
-        vibrate: ($.vibrateOption.value) ? 1 : 0
-    };
+    try
+    {
+        var hours = parseInt($.hoursPicker.getSelectedRow(0).getTitle());
+    }
+    catch (e)
+    {
+        Ti.API.debug('Zawiodły godziny');
+        var hours = 0;
+    }
+    try
+    {
+        var minutes = parseInt($.minutesPicker.getSelectedRow(0).getTitle());
+    }
+    catch (e)
+    {
+        Ti.API.debug('Zawiodły minuty');
+        var minutes = 0;
+    }
+    try
+    {
+        var seconds = parseInt($.secondsPicker.getSelectedRow(0).getTitle());
+    }
+    catch (e)
+    {
+        Ti.API.debug('Zawiodły sekundy');
+        var seconds = 0;
+    }
+    var duration = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000)
+        , data = {
+            name: $.newTitle.value,
+            duration: duration,
+            current_time: duration,
+            sound: ($.soundOption.value) ? 1 : 0,
+            vibrate: ($.vibrateOption.value) ? 1 : 0
+        };
     return data;
 };
