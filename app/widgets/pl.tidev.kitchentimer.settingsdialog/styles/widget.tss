@@ -1,0 +1,23 @@
+"#dialog": {
+	title: L('settings'),
+	buttonNames: [
+		'OK',
+		L('buttonCancel')
+	]
+}
+".container": {
+	layout: 'vertical'
+}
+"#stayOn": {
+	top: 16,
+	left: 16,
+	right: 16,
+	value: false,
+	title: L('stayOnOption', 'Keep screen on'),
+	style: Titanium.UI.Android.SWITCH_STYLE_CHECKBOX
+}
+"#version": {
+	left: 16,
+	right: 16,
+	bottom: 16
+}

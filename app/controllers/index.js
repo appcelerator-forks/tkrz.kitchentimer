@@ -1,6 +1,14 @@
 
 var _collection = Alloy.Collections.instance('timer');
 
+$.index.keepScreenOn = Ti.App.Properties.getBool('keepScreenOn', false);
+
+Alloy.Globals.AlarmManager.addAlarmService({
+    requestCode: 0,
+    service:'pl.tidev.kitchentimer.Timer_handlerService',        
+    second: 0, //Set the number of minutes until the alarm should go off
+    interval: 1000
+});
 
 function init(){
     _collection.fetch();
@@ -51,10 +59,16 @@ function addTimer(){
 }
 
 
-function modelToJson(model) {
-    // Need to convert the model to a JSON object
-    var transform = model.toJSON();
-    return transform;
+function showSettings() {
+    var settings = Alloy.createWidget('pl.tidev.kitchentimer.settingsdialog');
+    settings.dialog.addEventListener('click', function(e){
+        if(e.button && e.index == 0)
+        {
+            $.index.keepScreenOn = settings.stayOn.value;
+            Ti.App.Properties.setBool('keepScreenOn', settings.stayOn.value);
+        }
+    });
+    settings.dialog.show();
 }
 
 $.index.open();

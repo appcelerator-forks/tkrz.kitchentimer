@@ -1,0 +1,8 @@
+<Alloy>
+	<AlertDialog id="dialog">
+		<ScrollView class="container">
+			<Switch id="stayOn" />
+			<Label id="version" />
+		</ScrollView>
+	</AlertDialog>
+</Alloy>

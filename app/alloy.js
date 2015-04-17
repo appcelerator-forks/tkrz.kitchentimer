@@ -11,10 +11,3 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Alloy.Globals.AlarmManager = require('bencoding.alarmmanager').createAlarmManager();
-
-Alloy.Globals.AlarmManager.addAlarmService({
-    requestCode: 0,
-    service:'pl.tidev.kitchentimer.Timer_handlerService',        
-    second: 0, //Set the number of minutes until the alarm should go off
-    interval: 1000
-});

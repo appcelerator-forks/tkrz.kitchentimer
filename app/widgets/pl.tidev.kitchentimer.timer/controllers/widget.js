@@ -6,6 +6,15 @@ _model.on('change:current_time', function(){
     updateTimerDisplay();
 });
 
+if(_model.get('is_running'))
+{
+    $.startStop.title = '\uf04c';
+}
+else
+{
+    $.startStop.title = '\uf04b';
+}
+
 $.title.text = _model.get('name');
 (_model.get('sound') == 0) ? $.soundIco.opacity = 0.1 : $.soundIco.opacity = 1;
 (_model.get('vibrate') == 0) ? $.vibrateIco.opacity = 0.1 : $.vibrateIco.opacity = 1;
@@ -13,31 +22,28 @@ updateTimerDisplay();
 
 function startStop(){
     if(!_model.get('is_running')){
-        var currentTime = _model.get('current_time')
-            , now = new Date().getTime()
-            , end = new Date(now + currentTime);
+        $.startStop.title = '\uf04c';
+        var currentTime = _model.get('current_time');
         _model.save({
             is_running: 1,
             last_update: new Date().getTime()
         });
-        Ti.API.info(end.toTimeString());
+        Ti.API.info(Math.floor(currentTime/1000));
+        Alloy.Globals.AlarmManager.cancelAlarmNotification(_model.get('id'));
         Alloy.Globals.AlarmManager.addAlarmNotification({
             requestCode: _model.get('id'),
             icon: Ti.App.Android.R.drawable.appicon,
-            year: end.getFullYear(),
-            month: end.getMonth(),
-            day: end.getDate(),
-            second: end.getSeconds(),
-            minute: end.getMinutes(),
-            hour: end.getHours(), 
-            contentTitle: L('notificationTitle'),
-            contentText: String.format(L('notificationBody'), _model.get('name')),
+            second: Math.floor(currentTime/1000),
+            contentTitle: L('notificationTitle', 'Timer finished'),
+            contentText: String.format(L('notificationBody', 'Timer %s has ended countdown!'), _model.get('name')),
             vibrate: (_model.get('vibrate') == 1) ? true : false,
-            playSound: (_model.get('sound') == 1) ? true: false
+            playSound: (_model.get('sound') == 1) ? true: false,
+            sound: Ti.Filesystem.getResRawDirectory() + 'alarm',
         });
     }
     else
     {
+        $.startStop.title = '\uf04b';
         _model.save({is_running: 0});
         Alloy.Globals.AlarmManager.cancelAlarmNotification(_model.get('id'));
     }

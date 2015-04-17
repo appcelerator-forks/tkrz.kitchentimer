@@ -12,4 +12,7 @@
 	<string name="buttonClose">Close</string>
 	<string name="notificationBody">Timer %s has ended countdown!</string>
 	<string name="notificationTitle">Timer finished</string>
+	<string name="version">Version: %s</string>
+	<string name='stayOnOption'>Keep screen on</string>
+	<string name="settings">Settings</string>
 </resources>

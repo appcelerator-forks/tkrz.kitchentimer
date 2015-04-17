@@ -6,7 +6,8 @@
 	    	platform="android">
 	        <MenuItem id="addNew"
 	        	onClick="addTimer" />
-	        <!-- <MenuItem id="savedTimers" /> -->
+	        <MenuItem id="settings"
+	        	onClick="showSettings" />
 	    </Menu>
 		
 		<ScrollView id="container"

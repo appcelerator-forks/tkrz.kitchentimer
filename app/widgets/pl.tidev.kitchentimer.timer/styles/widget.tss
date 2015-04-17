@@ -26,7 +26,7 @@
 }
 ".separator": {
     bottom: 0,
-    height: 1,
+    height: '1px',
     width: Titanium.UI.FILL,
     backgroundColor: 'gray'
 }

@@ -10,4 +10,7 @@
 	<string name="close">Zamknij</string>
 	<string name="notificationBody">Licznik %s skończył odliczanie!</string>
 	<string name="notificationTitle">Zakończone odliczanie</string>
+	<string name="version">Wersja: %s</string>
+	<string name="stayOnOption">Pozostaw włączony</string>
+	<string name="settings">Ustawienia</string>
 </resources>

@@ -11,8 +11,7 @@
     showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
     icon: '/images/ic_action_new.png'
 }
-"#savedTimers": {
-	title: 'Saved',
-    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS,
-    icon: '/images/ic_action_important.png'
+"#settings": {
+	title: L('settings'),
+    showAsAction: Ti.Android.SHOW_AS_ACTION_NEVER
 }
