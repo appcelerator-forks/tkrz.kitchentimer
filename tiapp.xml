@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>pl.tkrz.kitchentimer</id>
+    <id>pl.tidev.kitchentimer</id>
     <name>Kitchen Timer</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <publisher>tkrz</publisher>
     <url>http://xx</url>
     <description>undefined</description>
-    <copyright>2014 by tkrz</copyright>
+    <copyright>2015 by Ti Dev</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -39,11 +39,14 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="3" android:versionName="1.0.2">
+        <manifest android:versionCode="2" android:versionName="1.1.0">
             <application android:theme="@style/Theme.Actionbarred"/>
-            <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21"/>
+            <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
             <!-- other manifest entries -->
         </manifest>
+        <services>
+            <service type="interval" url="timer_handler.js"/>
+        </services>
     </android>
     <mobileweb>
         <precache/>
@@ -53,7 +56,9 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="android">bencoding.alarmmanager</module>
+    </modules>
     <deployment-targets>
         <target device="iphone">false</target>
         <target device="ipad">false</target>
