@@ -10,4 +10,4 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-Alloy.Globals.updateObj = _.extend({}, Backbone.Events);
+Alloy.Globals.AlarmManager = require('bencoding.alarmmanager').createAlarmManager();

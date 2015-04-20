@@ -1,5 +1,5 @@
 {
-	"id": "timer",
+	"id": "pl.tidev.kitchentimer.timer",
 	"name": "timer",
 	"description" : "Timer widget that counts down time and notify user.",
 	"author": "Tomasz Krzywda",

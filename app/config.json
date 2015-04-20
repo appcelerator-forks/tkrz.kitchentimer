@@ -13,6 +13,8 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "timer": "1.0"
+        "pl.tidev.kitchentimer.timer": "1.0",
+        "pl.tidev.kitchentimer.optionsdialog": "1.0",
+        "pl.tidev.kitchentimer.settingsdialog": "1.0"
     }
 }
