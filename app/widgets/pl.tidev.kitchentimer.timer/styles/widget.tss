@@ -110,7 +110,7 @@
 "#separator": {
 	top: '50%',
 	right: 0,
-	height: 1,
+	height: '1px',
 	width: 50,
 	backgroundColor: 'white'
 }

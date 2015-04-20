@@ -19,6 +19,7 @@ for(var i = 0, l = _collection.length; i < l; i++)
     {
         set.is_running = 0,
         set.current_time = model.get('duration');
+        model.trigger('end');
     }
     model.save(set);
 }

@@ -5,6 +5,9 @@ _model.on('change:current_time', function(){
     // Ti.API.info('Model update: ' + _model.get('currentTime'));
     updateTimerDisplay();
 });
+_model.on('end', function(){
+    $.startStop.title = '\uf04b';
+});
 
 if(_model.get('is_running'))
 {
@@ -28,12 +31,12 @@ function startStop(){
             is_running: 1,
             last_update: new Date().getTime()
         });
-        Ti.API.info(Math.floor(currentTime/1000));
+        Ti.API.info(Math.round(currentTime/1000));
         Alloy.Globals.AlarmManager.cancelAlarmNotification(_model.get('id'));
         Alloy.Globals.AlarmManager.addAlarmNotification({
             requestCode: _model.get('id'),
             icon: Ti.App.Android.R.drawable.appicon,
-            second: Math.floor(currentTime/1000),
+            second: Math.round(currentTime/1000),
             contentTitle: L('notificationTitle', 'Timer finished'),
             contentText: String.format(L('notificationBody', 'Timer %s has ended countdown!'), _model.get('name')),
             vibrate: (_model.get('vibrate') == 1) ? true : false,
